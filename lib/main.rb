@@ -1,9 +1,11 @@
-require 'sinatra'
+require 'sinatra/base'
 
-class Dictionary < Sinatra::Base
+class Main < Sinatra::Base
+	get '/' do
+		'Diction Harry in the House YOO!'
+	end
 
-end
-
-get '/' do
-	'Diction Harry in the House YOO!'
+	# $0 is the executed file
+	# __FILE__ is the current file
+	run! if __FILE__ == $0
 end
