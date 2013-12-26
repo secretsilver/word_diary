@@ -1,8 +1,13 @@
 require 'sinatra/base'
+require_relative 'dictionary'
 
 class Main < Sinatra::Base
-	get '/' do
-		'Diction Harry in the House YOO!'
+	get '/:word' do
+		word = params[:word]
+		dictionary = Dictionary.new
+
+		definition = dictionary.define(word)
+		"#{word.capitalize}: #{definition}"
 	end
 
 	# $0 is the executed file
