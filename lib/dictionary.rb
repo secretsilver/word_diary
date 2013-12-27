@@ -12,7 +12,10 @@ class Dictionary
 	end
 
 	def define(word)
-		a = Wordnik.word.get_definitions(word)
-		a[0]["text"].to_s
+		definition = Wordnik.word.get_definitions(word)
+		
+		definition.collect do |word|
+			word["text"].to_s
+		end
 	end
 end
