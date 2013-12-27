@@ -6,12 +6,35 @@
 	<link rel="stylesheet" href="/css/blog.css" media="screen" />
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/base-min.css">
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
-	
-	<script type="text/javascript" src="/js/jquery.min.js"></script> 
-	<script type="text/javascript" src="/js/jquery.timeago.js"></script> 
-	<script type="text/javascript" src="/js/blog.js"></script>
+
+	<link rel="stylesheet" href="/css/side-menu.css">
+	<script type="text/javascript" src="/js/ui.js"></script>
 </head>
 	<body>
-		<%= yield %>
+		<div id="layout">
+			<a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+
+			<div id="menu">
+				<div class="pure-menu pure-menu-open">
+					<a href="#" class="pure-menu-heading">Diction-Harry</a>
+					<ul>
+						<li><a href="#">Define</a></li>
+						<li><a href="#">Base</a></li>
+						<li><a href="#">Base</a></li>
+						<li><a href="#">Base</a></li>
+						<li><a href="#">Base</a></li>
+						<li class="menu-item-divided"></li>
+						<li><a href="#">Base</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="content">
+				<%= yield %>
+			</div>
+		</div>
 	</body>
 </html>
