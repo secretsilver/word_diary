@@ -2,6 +2,11 @@ require 'sinatra/base'
 require_relative 'dictionary'
 
 class Main < Sinatra::Base
+
+	get '/' do
+		erb :home
+	end
+
 	get '/:word' do
 		word = params[:word]
 		dictionary = Dictionary.new
