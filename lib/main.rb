@@ -8,11 +8,11 @@ class Main < Sinatra::Base
 	end
 
 	get '/:word' do
-		word = params[:word]
+		@word = params[:word]
 		dictionary = Dictionary.new
 
-		definition = dictionary.define(word)
-		"#{word.capitalize}: #{definition}"
+		@definitions = dictionary.define_word(@word)
+		erb :define
 	end
 
 	# $0 is the executed file

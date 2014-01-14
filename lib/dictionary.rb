@@ -11,7 +11,7 @@ class Dictionary
 		config.api_key = '58ad9ba8136909b00a00c015f6e0d9c4c577583004a097d4c'
 	end
 
-	def define(word)
+	def define_word(word)
 		definition = Wordnik.word.get_definitions(word)
 		
 		definition.collect do |word|
