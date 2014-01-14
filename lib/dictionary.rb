@@ -8,7 +8,7 @@ class Dictionary
 	# end
 
 	Wordnik.configure do |config|
-		config.api_key = '58ad9ba8136909b00a00c015f6e0d9c4c577583004a097d4c'
+		config.api_key = ENV['WORDNIK_API_KEY'] 
 	end
 
 	def define_word(word)

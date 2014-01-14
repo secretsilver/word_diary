@@ -1,5 +1,12 @@
 require 'sinatra/base'
 require_relative 'dictionary'
+require 'dotenv'
+Dotenv.load
+
+# Wordnik config
+Wordnik.configure do |config|
+  config.api_key = ENV['WORDNIK_API_KEY'] 
+end
 
 class Main < Sinatra::Base
 
