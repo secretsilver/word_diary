@@ -2,11 +2,6 @@
 
 class Dictionary
 
-	# def initialize(word)
-	# 	base_url = 'https://api.wordnik.com'
-	# 	url = "#{base_url}/v4/resources.json"
-	# end
-
 	Wordnik.configure do |config|
 		config.api_key = ENV['WORDNIK_API_KEY'] 
 	end
