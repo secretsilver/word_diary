@@ -14,7 +14,7 @@ class Main < Sinatra::Base
 		erb :home
 	end
 
-	get '/:word' do
+	get '/define' do
 		@word = params[:word]
 		dictionary = Dictionary.new
 

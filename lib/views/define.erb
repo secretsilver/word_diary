@@ -1,6 +1,10 @@
 <h1><%= @word.capitalize %></h1>
 <ol>
-  <% @definitions.each do |d| %>
-    <li><%= d %></li>
+  <% if @definitions != nil %>
+    <% @definitions.each do |d| %>
+      <li><%= d %></li>
+    <% end %>
+  <% else %>
+    <h1>Not a valid word</h1>
   <% end %>
 </ol>

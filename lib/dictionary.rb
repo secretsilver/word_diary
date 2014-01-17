@@ -8,9 +8,7 @@ class Dictionary
 
 	def define_word(word)
 		definition = Wordnik.word.get_definitions(word)
-		
-		definition.collect do |word|
-			word["text"].to_s
-		end
+    puts definition 
+      definition.collect { |w| w["text"] } 
 	end
 end
