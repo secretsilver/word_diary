@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative 'dictionary'
+require_relative 'worddiary/dictionary'
 require 'dotenv'
 Dotenv.load
 
@@ -8,7 +8,7 @@ Wordnik.configure do |config|
   config.api_key = ENV['WORDNIK_API_KEY'] 
 end
 
-class Main < Sinatra::Base
+class WordDiary < Sinatra::Base
 
 	get '/' do
 		erb :home

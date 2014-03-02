@@ -1,3 +1,3 @@
-require './lib/main'
+require './lib/worddiary'
 
-run Main
+run WordDiary
