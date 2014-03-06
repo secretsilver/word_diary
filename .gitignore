@@ -21,3 +21,6 @@
 
 # Ignore .env file
 /.env
+
+# Ruby Version
+.ruby-version
