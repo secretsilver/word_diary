@@ -78,9 +78,27 @@ body {
 
 h1 {
   font-size: 3em;
-  color: #ffb2b2;
+  color: #391A13;
+  text-shadow: 1px 1px 1px #000;
+  margin-bottom: 0.5em;
 }
 
+.content {
+  padding: 4em;
+}
+
+.pure-button {
+  background-color: #53C683;
+}
+
+#menu .pure-menu-heading {
+  background-color: #391A13;
+}
+
+ol li {
+  list-style-type: upper-roman;
+  color: #000;
+}
 
 /*////////////////////////////////////////////////
 //
