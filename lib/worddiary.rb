@@ -56,7 +56,6 @@ class WordDiary < Sinatra::Base
 
   get '/auth/twitter/callback' do
     session[:user] = true
-    puts "SESSION? = #{session[:user]}"
     unless session[:user]
       redirect to("/"), :layout => false
     end
@@ -69,7 +68,6 @@ class WordDiary < Sinatra::Base
     end
 
     session[:user_id] = @user.id
-    puts "SESSION USER ID? = #{session[:user_id]}"
     erb :home
   end
 
@@ -90,7 +88,7 @@ class WordDiary < Sinatra::Base
     end
   end
 
-	get '/define' do
+  get '/define' do
     if user?
       @word = params[:word]
       dictionary = Dictionary.new
@@ -105,32 +103,15 @@ class WordDiary < Sinatra::Base
     @word = params[:word]
     dictionary = Dictionary.new
     @definitions = dictionary.define_word(@word)
-
     entry = DictionaryEntry.find_or_create_by(word: @word, definitions: @definitions)
-
-    puts "DICTIONARY Word: #{entry.word}"
-    puts "DICTIONARY Definition: #{entry.definitions}"
-
-    a = current_user.dictionary_entries << entry
-    puts "THIS IS A COLLECTION PROXY? #{a}"
-
-    a.map do |e| 
-      puts "THIS IS YOUR DICTIONARY ENTRIES = #{e}"
-    end
-
+    current_user.dictionary_entries << entry
     erb :home
   end
 
   get '/diary' do
-    # @diary = User.where(id: session[:user_id]).dictionary_entries.map do |item|
-    #   item.word
-    # end
-
     @diary = current_user.dictionary_entries.map do |item|
       item.word
     end
-
-    puts "THIS IS MY DIARY: #{@diary}"
     erb :diary
   end
 
