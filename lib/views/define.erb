@@ -8,3 +8,9 @@
     <h1>Not a valid word</h1>
   <% end %>
 </ol>
+
+
+<form action="/dictionary_entry" method="POST">
+  <input type="hidden" name="word" value="<%= @word %>" />
+  <input type="submit" value="Dictionary_Entry" />
+</form>
