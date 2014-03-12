@@ -45,9 +45,9 @@ class WordDiary < Sinatra::Base
     end
   end
 
-	get '/' do
+  get '/' do
     erb :index, :layout => false
-	end
+  end
 
   # Btn to get authorized
   get '/login' do
@@ -115,7 +115,7 @@ class WordDiary < Sinatra::Base
     erb :diary
   end
 
-	# $0 is the executed file
-	# __FILE__ is the current file
-	run! if __FILE__ == $0
+  # $0 is the executed file
+  # __FILE__ is the current file
+  run! if __FILE__ == $0
 end
