@@ -103,9 +103,13 @@ class WordDiary < Sinatra::Base
     @word = params[:word]
     dictionary = Dictionary.new
     @definitions = dictionary.define_word(@word)
-    entry = DictionaryEntry.find_or_create_by(word: @word, definitions: @definitions)
-    current_user.dictionary_entries << entry
-    erb :home
+    unless current_user.dictionary_entries.exists?(word: @word)
+      entry = DictionaryEntry.find_or_create_by(word: @word, definitions: @definitions)
+      current_user.dictionary_entries << entry
+      erb :home
+    else
+      erb :define
+    end
   end
 
   get '/diary' do
